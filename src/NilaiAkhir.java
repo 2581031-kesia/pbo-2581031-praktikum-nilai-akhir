@@ -28,6 +28,20 @@
          // (mis. 85*30/100seharusnya 25.5) langsung dipotong (truncate) jadi 25 SEBELUM sempat dijumlahkan.
          // Ini jebakan yang sama dengan kasus 1024 vs 1024.0 minggu lalu: memakai int(bukan double) akan membuat Java memangkas pecahan diam-diam
 
+         // Tidak perlu kurung: operator * dikerjakan lebih dulu daripada + (operator precedence).
+         double akhir = praktikum * BOBOT_PRAKTIKUM + tugas * BOBOT_TUGAS + mid * BOBOT_MID;
+         akhir += finalNilai * BOBOT_FINAL; // augmented assignment untuk komponen final
+
+         int dipotong = (int)akhir;
+         double selisihPotong = akhir - dipotong;
+
+         // Pembulatan ditulis eksplisit dengan (int); selisihnya tidak persis 0
+         // karena double menyimpan pecahan biner, bukan salah hitung.
+         int dibulatkan = (int) Math.round(akhir);
+         double selisihBulat = akhir - dibulatkan;
+
+         // Status kelulusan sebagai boolean, dicetak apa adanya tanpa if.
+         boolean lulus = akhir >= 60;
 
 
      }
