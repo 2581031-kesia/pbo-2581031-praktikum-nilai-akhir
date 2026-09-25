@@ -43,6 +43,18 @@
          // Status kelulusan sebagai boolean, dicetak apa adanya tanpa if.
          boolean lulus = akhir >= 60;
 
+         System.out.println();
+         System.out.println("===== NILAI AKHIR =====");
+         System.out.println("Praktikum : " + praktikum + "  (30%)");
+         System.out.println("Tugas     : " + tugas + "  (20%)");
+         System.out.println("MID       : " + mid + "  (20%)");
+         System.out.println("Final     : " + finalNilai + "  (30%)");
+         System.out.println();
+         System.out.println("Nilai akhir  : " + akhir);
+         System.out.println("Dibulatkan   : " + dibulatkan);
+         System.out.println("Selisih      : " + selisihBulat);
+         System.out.println("Lulus (>=60) : " + lulus);
+
 
      }
  }
